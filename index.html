@@ -1,131 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neha Pandya | Senior Android Developer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-    a { color: #38bdf8; text-decoration: none; }
-    header {
-      padding: 120px 20px 100px;
-      text-align: center;
-      background: radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 40%),
-                  linear-gradient(135deg, #020617, #0f172a);
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 300px;
-      height: 300px;
-      background: rgba(56,189,248,0.15);
-      filter: blur(120px);
-      z-index: 0;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 280px;
-      height: 280px;
-      background: rgba(99,102,241,0.15);
-      filter: blur(120px);
-      z-index: 0;
-    }
-    header > * {
-      position: relative;
-      z-index: 1;
-    }
-    .profile-photo {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(56,189,248,0.9);
-      box-shadow: 0 0 0 6px rgba(56,189,248,0.15), 0 20px 40px rgba(0,0,0,0.6);
-      margin-bottom: 24px;
-    }
-    header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-      letter-spacing: 0.5px;
-    }
-    header p {
-      font-size: 1.15rem;
-      color: #cbd5f5;
-    }
-    .hero-links a {
-      display: inline-block;
-      margin: 12px 10px 0;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(56,189,248,0.15);
-      border: 1px solid rgba(56,189,248,0.4);
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
-    .hero-links a:hover {
-      background: rgba(56,189,248,0.3);
-      transform: translateY(-2px);
-    }
-    .profile-photo {
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #38bdf8;
-      margin-bottom: 20px;
-    }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; color: #94a3b8; }
-    section { max-width: 1000px; margin: auto; padding: 60px 20px; }
-    h2 { color: #38bdf8; margin-bottom: 20px; }
-    .skills span {
-      display: inline-block;
-      background: #1e293b;
-      padding: 8px 14px;
-      margin: 6px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #020617;
-      color: #94a3b8;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neha Pandya | Senior Android Developer</title>
+
+<style>
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  overflow: hidden;
+}
+
+/* 🔥 GLOW EFFECT */
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.header::before {
+  background: #38bdf8;
+  top: -100px;
+  left: -100px;
+}
+
+.header::after {
+  background: #6366f1;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* CONTENT */
+.header-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* PROFILE IMAGE */
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* TEXT */
+.header-text h1 {
+  margin: 0;
+  font-size: 2.6rem;
+}
+
+.header-text p {
+  margin: 10px 0;
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+/* BUTTONS */
+.hero-links {
+  margin-top: 15px;
+}
+
+.hero-links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 1px solid #38bdf8;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.hero-links a:hover {
+  background: #38bdf8;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .profile-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* BUTTONS */
+.hero-links {
+  margin-top: 15px;
+}
+
+.hero-links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 1px solid #38bdf8;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.hero-links a:hover {
+  background: #38bdf8;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+h2 {
+  color: #38bdf8;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #1e293b;
+  padding: 8px 14px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.skills span:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* CARDS */
+.card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* PROJECT GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.project-card {
+  background: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* IMAGE */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.project-content {
+  padding: 18px;
+}
+
+.project-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.project-content p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.project-content a {
+  font-size: 0.85rem;
+  color: #38bdf8;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+  background: #020617;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <!-- Replace profile.jpg with your actual image file name -->
-  <img src="neha_profile.jpeg" alt="Neha Pandya" class="profile-photo" />
-  <h1>Neha Pandya</h1>
-  <p> Android • Kotlin • Java • Compose </p>
-  <div class="hero-links">
-    <a href="mailto:nehapandya00007@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/neha-pandya-149173122" target="_blank">LinkedIn</a>
-  </div>
-</header>
+<header class="header">
 
+  <div class="header-container">
+    
+    <img src="neha_profile.jpeg" alt="Neha Pandya" class="profile-photo" />
+    
+    <div class="header-text">
+      <h1>Neha Pandya</h1>
+      <p>Android • Kotlin • Java • Jetpack Compose</p>
+
+      <div class="hero-links">
+        <a href="mailto:nehapandya00007@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/neha-pandya-149173122" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+
+</header>
 <section>
   <h2>About Me</h2>
   <p>
@@ -163,6 +328,7 @@
     <!-- Device & Platform -->
     <span>Bluetooth Low Energy (BLE)</span><span>Google APIs</span><span>ML Kit</span>
     <span>Socket.IO</span>
+    <span>WebRTC</span>
 
     <!-- Payments -->
     <span>Razorpay SDK</span><span>Instamojo</span><span>Payment Services SDK</span>
@@ -180,53 +346,53 @@
     <span>Cross‑functional Collaboration</span>
   </div>
 </section>
-
 <section>
-  <h2>Experience</h2>
+  <h2>Companies I’ve Worked With</h2>
 
   <div class="card">
-    <strong>Razorpay – Software Engineer II</strong><br />
-    Apr 2023 – Nov 2024 | Bangalore
-    <ul>
-      <li>Worked on Razorpay Android Payment SDK</li>
-      <li>Built secure and scalable payment flows</li>
-      <li>Collaborated with backend and product teams</li>
-    </ul>
-  </div>
+    <strong>Razorpay – Software Engineer II</strong>  </div>
 
   <div class="card">
-    <strong>Excellent Web World – Senior Android Developer (TL)</strong><br />
-    Oct 2021 – Mar 2023
-  </div>
+    <strong>Excellent Web World – Senior Android Developer (TL)</strong>  </div>
 
   <div class="card">
-    <strong>Sprybit Softwares – Android Developer</strong><br />
-    Sep 2019 – Sep 2021
-  </div>
+    <strong>Sprybit Softwares – Android Developer</strong> </div>
 </section>
 
 <section>
   <h2>Projects</h2>
 
-  <div class="card">
-    <strong>Razorpay Payment SDK</strong>
-    <p>Android SDK for integrating payment gateway into apps.</p>
-    <a href="https://razorpay.com/docs/payments/payment-gateway/android-integration/standard/" target="_blank">View</a>
-  </div>
+  <div class="projects-grid">
 
-  <div class="card">
-    <strong>EOSWIM</strong>
-    <p>BLE-based swimmer performance tracking app.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.eolab.swimbetter" target="_blank">Play Store</a>
-  </div>
+    <div class="project-card">
+      <img src="razorpay.png" alt="Razorpay SDK" />
+      <div class="project-content">
+        <h3>Razorpay Payment SDK</h3>
+        <p>Android SDK for seamless payment integration.</p>
+        <a href="https://razorpay.com/docs/payments/payment-gateway/android-integration/standard/" target="_blank">View Project →</a>
+      </div>
+    </div>
 
-  <div class="card">
-    <strong>ON2COOK</strong>
-    <p>Smart cooking application integrated with advanced hardware.</p>
-    <a href="https://on2cook.com" target="_blank">Website</a>
+    <div class="project-card">
+      <img src="eo_logo.png" alt="EOSWIM" />
+      <div class="project-content">
+        <h3>EOSWIM</h3>
+        <p>BLE-based swimmer performance tracking app.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.eolab.swimbetter" target="_blank">Play Store →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="ownmates.png" alt="OWNMATES" />
+      <div class="project-content">
+        <h3>OWNMATES</h3>
+        <p>Connect globally through discovery, real-time chat, and seamless video calling.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.apps.ownmates&hl=en_IN">Play Store →</a>
+      </div>
+    </div>
+
   </div>
 </section>
-
 <footer>
   © 2026 Neha Pandya · Senior Android Developer
 </footer>
